@@ -19,9 +19,5 @@ button{
     align-items: center;
 }
 
-#grid > div {
-    width: 30px;
-    height: 30px;
-    border: 1px solid gray;
-}
+
     
