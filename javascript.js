@@ -16,6 +16,9 @@ for (let i = 0; i < size * size; i++){
             square.style.backgroundColor = color;
         }
     });
+    square.addEventListener('click', () =>{
+        square.style.backgroundColor = color;
+    });
     grid.appendChild(square);
     divArray.push(square);
 }
@@ -55,7 +58,20 @@ resize.addEventListener('click', () =>{
                 square.style.backgroundColor = color;
             }
         });
+        square.addEventListener('click', () =>{
+            square.style.backgroundColor = color;
+        });
         grid.appendChild(square);
         divArray.push(square);
     }
+});
+
+const eraser = document.querySelector("#eraser");
+eraser.addEventListener('click', () => {
+    color = 'white';
+});
+
+const draw = document.querySelector("#draw");
+draw.addEventListener('click', () => {
+    color = 'black';
 });

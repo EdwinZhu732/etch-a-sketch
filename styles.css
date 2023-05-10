@@ -6,8 +6,10 @@ body{
     background-color: yellowgreen;
 }
 
-button{
+.buttons{
+    display: flex;
     margin-bottom: 32px;
+    gap: 16px;
 }
 
 #grid{
