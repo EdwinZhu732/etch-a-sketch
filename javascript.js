@@ -75,3 +75,11 @@ const draw = document.querySelector("#draw");
 draw.addEventListener('click', () => {
     color = 'black';
 });
+
+const clear = document.querySelector("#clear");
+clear.addEventListener('click', () => {
+    let squareList = document.querySelectorAll(".square");
+    squareList.forEach((item) => {
+        item.style.backgroundColor ='white';
+    });
+});
