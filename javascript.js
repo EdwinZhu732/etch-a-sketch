@@ -1,6 +1,8 @@
 let size = 16;
 const divArray = [];
 const grid = document.querySelector('#grid');
+let color = 'black';
+
 
 for (let i = 0; i < size * size; i++){
     let square = document.createElement('div');
@@ -8,12 +10,24 @@ for (let i = 0; i < size * size; i++){
     square.style.width = `${512/size - 2}px`;
     square.style.height = `${512/size - 2}px`;
     square.style.border = '1px solid gray';
-    square.addEventListener('mouseover', () => {
-        square.style.backgroundColor = 'black';
-    })
+    square.style.backgroundColor = 'white';
+    square.addEventListener('mouseover', () =>{
+        if (drawing){
+            square.style.backgroundColor = color;
+        }
+    });
     grid.appendChild(square);
     divArray.push(square);
 }
+
+let drawing = false;
+
+window.addEventListener('mousedown', () =>{
+    drawing = true;
+});
+window.addEventListener('mouseup', () =>{
+    drawing = false;
+});
 
 const resize = document.querySelector("#resize");
 resize.addEventListener('click', () =>{
@@ -35,9 +49,12 @@ resize.addEventListener('click', () =>{
         square.style.width = `${512/size - 2}px`;
         square.style.height = `${512/size - 2}px`;
         square.style.border = '1px solid gray';
-        square.addEventListener('mouseover', () => {
-            square.style.backgroundColor = 'black';
-        })
+        square.style.backgroundColor = 'white';
+        square.addEventListener('mouseover', () =>{
+            if (drawing){
+                square.style.backgroundColor = color;
+            }
+        });
         grid.appendChild(square);
         divArray.push(square);
     }
